@@ -1,0 +1,13 @@
+ClassDecl 	-> class id  { ClassBody } | EPSILON
+ClassBody 	-> MainMethod | EPSILON
+MainMethod	-> Modifiers ( MethodParams ) { MethodBody }
+Modifiers 	-> AccessModifier | StaticModifier | void | EPSILON
+AccessModifier 	-> public | EPSILON
+StaticModifier 	-> static | EPSILON
+MethodParams	-> id 
+MethodBody	-> VarDecl | ArithmOp | Statement | EPSILON
+VarDec		-> Type id
+Type 		-> int
+ArithmOp 	-> + | - | =
+Statement	-> id ( Result )
+Result		-> id
